@@ -23,22 +23,22 @@ const routers = [
   {
     name: '個人簡介',
     element: <IntroductionPage />,
-    path: '/IntroductionPage'
+    path: '/ChrisSu/IntroductionPage'
   },
   {
     name: '筆記總覽',
     element: <NotesPage />,
-    path: '/NotesPage'
+    path: '/ChrisSu/NotesPage'
   },
   {
     name: '懶人工具',
     element: <ToolsPage />,
-    path: '/ToolsPage'
+    path: '/ChrisSu/ToolsPage'
   },
   {
     name: '相片專區',
     element: <PhotoPage />,
-    path: '/PhotoPage'
+    path: '/ChrisSu/PhotoPage'
   }
   
 ]
