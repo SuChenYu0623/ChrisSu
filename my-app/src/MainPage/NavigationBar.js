@@ -1,4 +1,5 @@
 import { React } from 'react'
+import { Link } from 'react-router-dom';
 import '.././App.css'
 function NavigationBar (props) {
   const { routers } = props;
@@ -15,7 +16,7 @@ function NavigationItem (props) {
   const { router } = props;
   return (
     <div className='NavigationItem'>
-      <a href={router.path}>{router.name}</a>
+      <Link to={router.path}>{router.name}</Link>
     </div>
   )
 }
