@@ -49,7 +49,7 @@ function SideBarItemChild(props) {
     <ul>
       {notes.map((note, index) => (
         <li key={index}>
-          <Link to={`/ToolsPage/${note}`} state={{ note: note }}>
+          <Link to={`/ChrisSu/ToolsPage/${note}`} state={{ note: note }}>
             {note}
           </Link>
         </li>

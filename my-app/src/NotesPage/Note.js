@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function Note() {
   const location = useLocation()
+  console.log(location.state)
   const { note } = location.state
   console.log('Note', location)
   return (
