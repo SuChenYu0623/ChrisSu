@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '.././App.css'
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import Note from './Note';
 
 const categories = {
   Python: [
@@ -83,17 +84,5 @@ function SideBarItemChild(props) {
         </li>
       ))}
     </ul>
-  )
-}
-
-
-function Note() {
-  const location = useLocation()
-  const { note } = location.state
-  console.log('Note', location)
-  return (
-    <div className='Note'>
-      <div>{note ? note : '筆記為空'}</div>
-    </div>
   )
 }
