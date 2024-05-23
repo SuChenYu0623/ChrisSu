@@ -25,7 +25,7 @@ export default function CheckDumplicationItems() {
       return code
         .trim()
         .replace(/[\n]/gm, '')
-        .replace(/(['"]|)([A-Za-z0-9]+)(['"]|)/gm, `"$2"`)
+        .replace(/(['"]|)([A-Za-z0-9]+)(['"]|):/gm, `"$2":`)
     }
     try {
       const arr = JSON.parse(cleanCode(code))
@@ -49,28 +49,32 @@ export default function CheckDumplicationItems() {
   
   return (
     <div className='ToolsContent'>
-      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '20px'}}>
-        <TextArea name={'code'} value={state.code} onChange={handleState} />
-        <div>
-          <input type='text' name='key' value={state.key} onChange={handleState} />
-          <br />
-          <input type='submit' onClick={checkDumplication} />
+      <div style={{display: 'flex', padding: '10px'}} className="h-medium">
+        <div style={{margin: '10px'}} className="w-medium">
+          <div className="h-large">
+            <TextArea name={'code'} value={state.code} onChange={handleState} />
+          </div>
+        </div>
+        <div style={{margin: '10px'}} className="w-medium">
+          <div className="h-medium">
+            <TextArea name={'Repeat'} value={state.RepeatArr} onChange={handleState} />
+          </div>
+          <div className="h-medium">
+            <TextArea name={'notRepeat'} value={state.notRepeatArr} onChange={handleState} />
+          </div>
         </div>
       </div>
-      <Result state={state} handleState={handleState} />
-    </div>
-  )
-}
-
-function Result(props) {
-  const { state } = props;
-  const { handleState } = props
-  return (
-    <div className='Result'>
-      <div>重複arr</div>
-      <TextArea value={state.RepeatArr} onChange={handleState} disabled={true} />
-      <div>不重複arr</div>
-      <TextArea value={state.notRepeatArr} onChange={handleState} disabled={true} />
+      <div style={{padding: '10px'}}>
+        <div style={{margin: '10px'}}>
+          輸入需要檢查的key值 (如果只是單純的array，保持為空即可)
+        </div>
+        <div style={{margin: '10px'}}>
+          <input type='text' name='key' value={state.key} onChange={handleState} />
+        </div>
+        <div style={{margin: '10px'}}>
+          <input type='submit' onClick={checkDumplication} />
+        </div>
+        </div>
     </div>
   )
 }
@@ -86,8 +90,11 @@ function TextArea (props) {
   return (
     <div className='TextArea'>
       <div className='Option'>
-        <a onClick={copyText}>copy</a>
-        <img src={copyImg} />
+        <span className="copy-title">{name}</span>
+        <div className="copy-btn">
+          <a onClick={copyText}>copy</a>
+          <img src={copyImg} /> 
+        </div>
       </div>
       <textarea 
         name={name} 

@@ -11,9 +11,7 @@ export default function PhotoDetail() {
   return (
     <div className="PhotoDetail">
       <div className="single-image">
-        
         <DefaultImage image={images[count]} width={'100%'} />
-        
         <div className="select-images-bar">
           {images.map((image, index) => (
             <a key={index} onClick={() => setCount(index)}>

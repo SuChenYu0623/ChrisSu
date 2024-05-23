@@ -14,6 +14,7 @@ const images = [
   'https://png.pngtree.com/png-clipart/20230511/ourmid/pngtree-cat-isolated-on-white-background-png-image_7094972.png'
 ]
 
+
 export default function PhotoPage () {
   return (
     <div style={{width: '50%'}}>
@@ -41,5 +42,6 @@ function PhotoAlbum(props) {
     </Link>
   )
 }
+
 
 

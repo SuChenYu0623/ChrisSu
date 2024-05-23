@@ -1,36 +1,128 @@
+/* other */
+body {
+  background-color: #4F4F4F;
+  color: #A6A6A6;
+}
+
+a {
+  text-decoration: none;
+  color: #A6A6A6;
+}
+
+a:hover {
+  color: #D9D9D9;
+}
+
+button {
+  border-radius: 5px;
+  border-width: 0px;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: #A6A6A6;
+  background-color: #272727;
+}
+button:hover {
+  background-color: #D9D9D9;
+  color: #272727;
+}
+
+table {
+  /* width: 100%; */
+}
+
+thead > tr > th {
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 15px;
+  /* width: 12%; */
+  background-color: #272727;
+  color: #A6A6A6;
+}
+tbody > tr > td {
+  /* width: 12%; */
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 15px;
+  background-color: #A6A6A6;
+  color: #272727;
+}
+
 /* coomon */
 .container {
   display: flex;
   justify-content: center;
 }
 
+
+
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-content {
-  /**/
-  color: #95CACA;
-  background-color: #336666;
   height: 92vh;
   display: flex;
   justify-content: center;
 }
+
+/* 長寬高 */
+.h-small {
+  height: auto;
+}
+.h-medium {
+  height: 50%;
+}
+.h-large {
+  height: 100%;
+}
+
+.w-small {
+  width: auto;
+}
+.w-medium {
+  width: 50%;
+}
+.w-large {
+  width: 100%;
+}
+.col-xs-1 {
+  width: 5%
+}
+.col-xs-2 {
+  width: 10%
+}
+.col-xs-4 {
+  width: 20%
+}
+.col-xs-6 {
+  width: 30%;
+}
+
 
 .NavigationBar {
   height: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #336666;
-  border-bottom: 3px solid #95CACA;
+  /* border-bottom: 3px solid #737373; */
+  background-color: #272727;
+}
+
+.Note {
+  background-color: #D9D9D9;
+  color: #404040;
+  width: 70%;
+  /* max-height: 100%; */
+  overflow-y: scroll;
+  padding: 10px 20px;
+  margin: 20px 15px;
+  border-radius: 5px;
 }
 
 .NavigationItem {
@@ -43,11 +135,11 @@
   font-size: 20px;
   font-weight: bolder;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  color: #95CACA;
 }
 
-.NavigationItem a:hover {
-  color: #FFD306;
+.NavigationItem:hover, .NavigationItem a:hover {
+  color: #4F4F4F;
+  background-color: #D9D9D9;
 }
 
 /* IntroductionPage */
@@ -73,8 +165,8 @@
 .SideBar {
   width: 20%;
   height: 100%;
-  background-color: #336666;
-  color: #95CACA;
+  /* background-color: #5D7684; */
+  /* color: #95CACA; */
   margin-right: 30px;
   /* overflow: hidden; */
   overflow-y: scroll; 
@@ -114,14 +206,50 @@
   /* padding: 0px 30px; */
 }
 
-.Note {
-  background-color: #c0c0c0;
+/* .Note {
+  background-color: #D0D0D0;
   color: black;
-  font-family: ' Comics Sans';
-  min-width: 60vmin;
-  max-width: 100vmax;
+  width: 60%;
   padding: 10px 15px;
   margin: 20px 15px;
+} */
+.Note pre {
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #f7f7f7;
+}
+.Note li code {
+  border-radius: 5px;
+  padding: 2.5px 5px;
+  background-color: #f7f7f7;
+}
+
+.markdown {
+  font-family: sans-serif;
+  white-space: pre-wrap;
+}
+
+/* Note */
+.markdown-pre {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #f7f7f7;
+}
+.markdown-pre code {
+  
+}
+
+.markdown-pre a span {
+  color: #000;
+  background-color: #D0D0D0;
+  padding: 5px;
+}
+
+.markdown-pre a span:hover {
+  background-color: #a7a7a7;
+  cursor: pointer;
 }
 
 .ToolsPage {
@@ -131,20 +259,38 @@
 }
 
 .ToolsContent {
-  min-width: 70vmin;
-  max-width: 100vmax;
+  width: calc(100% - 30px);
+  height: calc(100% - 20px);
   padding: 10px 15px;
-  margin: 20px 15px;
+  margin: 0px;
+  overflow-y: scroll; 
+  overflow-x: hidden;
 }
 
 .TextArea {
-  width: 70%;
-  background-color: #005757;
-  margin-bottom: 40px;
+  height: 100%;
+  background-color: #272727;
+  /* margin-bottom: 90px; */
+  /* margin-right: 30px; */
 }
+
 .TextArea .Option {
-  text-align: right;
+  min-height: 31px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TextArea .Option .copy-title {
+  text-align: left;
   padding: 5px;
+}
+
+.TextArea .Option .copy-btn {
+  padding: 5px;
+}
+
+.TextArea .Option .copy-btn a {
+  text-align: right;
 }
 
 .TextArea .Option img {
@@ -159,52 +305,39 @@
 
 textarea {
   width: 100%;
-  height: 100%;
-  background-color: #95CACA;
+  height: calc(100% - 31px);
+  background-color: #9D9D9D;
   padding: 10px;
   font-size: 15px;
-  color: #009393;
-  
   border-width: 0px;
   resize: none;
   overflow: hidden;
+  overflow-y: scroll;
   box-sizing: border-box;
 }
 textarea:focus {
   outline: none;
 }
 
-.Result {
-}
-
-/* other */
-a {
-  text-decoration: none;
-  color: #95CACA;
-}
-
-a:hover {
-  color: #009393;
-}
 
 /* custom component  */
 .downArrow {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
-  border-top: 10px solid #00DDDD;
+  border-top: 10px solid #A6A6A6;
   display: inline-block;
 }
 .downArrow:hover {
-  border-top-color: #009393;
+  border-top-color: #D9D9D9;
 }
 .upArrow {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
-  border-bottom: 10px solid #00DDDD;
+  border-bottom: 10px solid #A6A6A6;
   display: inline-block;
 }
 .upArrow:hover {
-  border-bottom-color: #009393;
+  border-bottom-color: #D9D9D9;
 }
 
 

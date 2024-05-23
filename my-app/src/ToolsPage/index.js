@@ -2,11 +2,12 @@ import React from 'react'
 import '.././App.css'
 import { Routes, Route, Link } from 'react-router-dom';
 import CheckDumplicationItems from './CheckDumplicationItems';
+import CheckCookieDiff from './CheckCookieDiff';
 
 const categories = {
   cats: [
-    'check dumplication items',
-    'cookie diff'
+    '檢查重複元素',
+    '檢查 cookie 差異'
   ]
 }
 
@@ -15,7 +16,8 @@ export default function ToolsPage() {
     <div className='ToolsPage'>
       <SideBar categories={categories} />
       <Routes>
-        <Route path='/check dumplication items' element={<CheckDumplicationItems />} />
+        <Route path='/檢查重複元素' element={<CheckDumplicationItems />} />
+        <Route path='/檢查 cookie 差異' element={<CheckCookieDiff />} />
       </Routes>
     </div>
   )

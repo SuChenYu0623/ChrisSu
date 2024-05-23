@@ -8,8 +8,8 @@ const categories = {
     'Python 常用指令',
     'Pandas & Numpy'
   ],
-  Javascript: [
-    'Javascript 常用指令',
+  JavaScript: [
+    'JavaScript 常用指令',
     'React',
     'NextJS'
   ]
@@ -20,7 +20,7 @@ export default function NotesPage() {
     <div className='NotesPage'>
       <SideBar categories={categories} />
       <Routes>
-        <Route path='/:name' element={<Note />} />
+        <Route path='/:path/:name' element={<Note />} />
       </Routes>
     </div>
   )
@@ -42,7 +42,6 @@ function SideBar(props) {
 function SideBarItem(props) {
   const { notes, name } = props
   let [status, setStatus] = useState(false);
-
   const handleStatus = () => {
     let newStatus = status === true ? false : true
     setStatus(newStatus)
@@ -55,7 +54,13 @@ function SideBarItem(props) {
         handleChange={handleStatus} 
       />
       <div style={status ? {display: 'none'} : {display: ''}}>
-        <SideBarItemChild notes={notes}/>
+        <ul>
+          {notes.map((note, index) => (
+            <li key={index}>
+              <SideBarItemChild note={note} path={`${name}/${note}`} />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   )
@@ -73,16 +78,10 @@ function SideBarItemParent(props) {
 }
 
 function SideBarItemChild(props) {
-  const { notes } = props;
+  const { note, path } = props;
   return (
-    <ul>
-      {notes.map((note, index) => (
-        <li key={index}>
-          <Link to={`/ChrisSu/NotesPage/${note}`} state={{ note: note }}>
-            {note}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Link to={`/ChrisSu/NotesPage/${path}`} state={{ note: note, path: path }}>
+      {note}
+    </Link>
   )
 }
