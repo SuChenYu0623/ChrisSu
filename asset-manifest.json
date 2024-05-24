@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/ChrisSu/static/css/main.0214f495.css",
-    "main.js": "/ChrisSu/static/js/main.1f0182f4.js",
+    "main.css": "/ChrisSu/static/css/main.d11122f0.css",
+    "main.js": "/ChrisSu/static/js/main.99478d87.js",
     "static/js/869.851550fe.chunk.js": "/ChrisSu/static/js/869.851550fe.chunk.js",
     "static/js/550.24df8ea5.chunk.js": "/ChrisSu/static/js/550.24df8ea5.chunk.js",
     "static/js/271.13e50709.chunk.js": "/ChrisSu/static/js/271.13e50709.chunk.js",
     "static/js/924.bf88af21.chunk.js": "/ChrisSu/static/js/924.bf88af21.chunk.js",
     "static/js/438.e855bb4c.chunk.js": "/ChrisSu/static/js/438.e855bb4c.chunk.js",
     "static/js/787.d4aba7ab.chunk.js": "/ChrisSu/static/js/787.d4aba7ab.chunk.js",
+    "static/media/BG.png": "/ChrisSu/static/media/BG.7ad52f0bd79ffc367323.png",
     "static/media/JavaScript 常用指令.md": "/ChrisSu/static/media/JavaScript 常用指令.8ef6cd712b6caa2f7b5a.md",
     "index.html": "/ChrisSu/index.html",
     "static/media/Python 常用指令.md": "/ChrisSu/static/media/Python 常用指令.0b016308ebbb73601775.md",
     "static/media/NextJS.md": "/ChrisSu/static/media/NextJS.31d6cfe0d16ae931b73c.md",
     "static/media/Pandas & Numpy.md": "/ChrisSu/static/media/Pandas & Numpy.31d6cfe0d16ae931b73c.md",
     "static/media/React.md": "/ChrisSu/static/media/React.31d6cfe0d16ae931b73c.md",
-    "main.0214f495.css.map": "/ChrisSu/static/css/main.0214f495.css.map",
-    "main.1f0182f4.js.map": "/ChrisSu/static/js/main.1f0182f4.js.map",
+    "main.d11122f0.css.map": "/ChrisSu/static/css/main.d11122f0.css.map",
+    "main.99478d87.js.map": "/ChrisSu/static/js/main.99478d87.js.map",
     "787.d4aba7ab.chunk.js.map": "/ChrisSu/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0214f495.css",
-    "static/js/main.1f0182f4.js"
+    "static/css/main.d11122f0.css",
+    "static/js/main.99478d87.js"
   ]
 }
