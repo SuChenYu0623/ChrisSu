@@ -148,7 +148,7 @@ tbody > tr > td {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231219/pngtree-orange-and-white-cat-on-gray-beach-during-daytime-photo-image_15526682.png');
+  background-image: url('./images/BG.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(166,166,166,0.4);

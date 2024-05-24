@@ -1,10 +1,10 @@
 import React from 'react';
 import '.././App.css'
+import BG_IMG from '../images/BG.png';
 
 const introduction = {
   cn_name: '蘇禎佑',
   en_name: 'chris',
-  avatar: 'https://png.pngtree.com/thumb_back/fw800/background/20231219/pngtree-orange-and-white-cat-on-gray-beach-during-daytime-photo-image_15526682.png',
   birthday: '1999/06/23',
   school: 'National Kaohsiung University of Science and Technology EE',
   company: 'BigGo 樂方股份有限公司',
@@ -15,11 +15,10 @@ const introduction = {
 }
 
 export default function IntroductionPage() {
-  // const { introduction } = props;
   return (
     <div className='IntroductionPage'>
       <div className='IntroductionContent'>
-        <Avatar introduction={introduction} />
+        <Avatar />
         <Introduction introduction={introduction} />
       </div>
       
@@ -27,11 +26,10 @@ export default function IntroductionPage() {
   )
 }
 
-function Avatar(props) {
-  const { introduction } = props
+function Avatar() {
   return (
     <div className='Avatar'>
-      <img src={introduction.avatar} />
+      <img src={BG_IMG} />
     </div>
   )
 } 
