@@ -28,6 +28,7 @@ button:hover {
 
 table {
   /* width: 100%; */
+  table-layout: fixed;
 }
 
 thead > tr > th {
@@ -45,6 +46,8 @@ tbody > tr > td {
   font-size: 15px;
   background-color: #A6A6A6;
   color: #272727;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 /* coomon */

@@ -88,7 +88,7 @@ export default function CheckCookieDiff() {
   }
   return (
     <div className="ToolsContent">
-      <div style={{display: 'flex', padding: '10px'}} className="h-medium w-large">
+      <div style={{display: 'flex', padding: '10px'}} className="h-medium">
         <div style={{margin: '10px'}} className="h-large w-medium">
           <TextArea name={"code1"} value={state.code1} onChange={handleState} />
         </div>
@@ -101,10 +101,10 @@ export default function CheckCookieDiff() {
           <button onClick={() => checkCookieDiff()}>parse</button>
         </div>
       </div>
-      <div style={{padding: '10px 0px 10px 10px', display: 'flex', justifyContent: 'center'}} className="h-medium">
-        <div style={{margin: '10px 0px 0px 10px'}} className="h-large w-large">
+      <div style={{padding: '10px', display: 'flex', justifyContent: 'center'}} className="h-medium">
+        <div style={{margin: '10px'}} className="h-large w-large">
           <div className="h-large w-large">
-            <table>
+            <table width={'100%'}>
               <thead>
                 <tr>
                   <th className="col-xs-2">cookie</th>
