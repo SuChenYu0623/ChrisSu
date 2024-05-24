@@ -4,7 +4,7 @@ import '.././App.css'
 const introduction = {
   cn_name: '蘇禎佑',
   en_name: 'chris',
-  avatar: 'https://images.chinatimes.com/newsphoto/2023-09-14/656/20230914006019.jpg',
+  avatar: 'https://png.pngtree.com/thumb_back/fw800/background/20231219/pngtree-orange-and-white-cat-on-gray-beach-during-daytime-photo-image_15526682.png',
   birthday: '1999/06/23',
   school: 'National Kaohsiung University of Science and Technology EE',
   company: 'BigGo 樂方股份有限公司',
@@ -18,8 +18,11 @@ export default function IntroductionPage() {
   // const { introduction } = props;
   return (
     <div className='IntroductionPage'>
-      <Avatar introduction={introduction} />
-      <Introduction introduction={introduction} />
+      <div className='IntroductionContent'>
+        <Avatar introduction={introduction} />
+        <Introduction introduction={introduction} />
+      </div>
+      
     </div>
   )
 }
@@ -35,14 +38,47 @@ function Avatar(props) {
 
 function Introduction(props) {
   const { introduction } = props
+  console.log(introduction)
   return (
     <div className='Introduction'>
-      <h1>{introduction.cn_name} {introduction.en_name}</h1>
+      {/* <h1>{introduction.cn_name} {introduction.en_name}</h1>
       <h4>生日 {introduction.birthday}</h4>
       <h4>任職於 {introduction.company}</h4>
       <h4>畢業於 {introduction.school}</h4>
       <h4>程式語言 {introduction.program_lan}</h4>
-      <h4>專案經歷 {introduction.experience}</h4>
+      <h4>專案經歷 {introduction.experience}</h4> */}
+      <div className='Introduction-title'>
+        <div>Crawler Enginer & Front End</div>
+      </div>
+      <br/>
+      <table style={{borderTop: '1px black solid'}}>
+        <tbody>
+          <tr>
+            <th colSpan="6">NAME</th>
+            <td colSpan="4">{introduction.cn_name} {introduction.en_name}</td>
+          </tr>
+          <tr>
+            <th colSpan="6">BORN DATE</th>
+            <td colSpan="4">{introduction.birthday}</td>
+          </tr>
+          <tr>
+            <th colSpan="6">WORK AT</th>
+            <td colSpan="4">{introduction.company}</td>
+          </tr>
+          <tr>
+            <th colSpan="6">GRADUATED FROM</th>
+            <td colSpan="4">{introduction.school}</td>
+          </tr>
+          <tr>
+            <th colSpan="6">PROGRAM LANGUAGE</th>
+            <td colSpan="4">{introduction.program_lan}</td>
+          </tr>
+          <tr>
+            <th colSpan="6">PROJECT EXPERIENCE</th>
+            <td colSpan="4">{introduction.company}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
