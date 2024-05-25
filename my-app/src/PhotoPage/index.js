@@ -31,7 +31,7 @@ export default function PhotoPage () {
 function PhotoAlbum(props) {
   const { images, title } = props
   return (
-    <Link className="PhotoAlbum" to={`/PhotoDetail/${title}`} state={{ images: images }}>
+    <Link className="PhotoAlbum" to={`/PhotoDetail/${title}`} state={{ images: images, title: title }}>
       <div>
         <img className="PhotoAlbumLeft defaultImg" src={images[0]} alt='image' />
         <img className="PhotoAlbumMid defaultImg" src={images[1]} alt='image' />
