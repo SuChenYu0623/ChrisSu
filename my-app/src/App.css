@@ -148,22 +148,53 @@ tbody > tr > td {
 /* IntroductionPage */
 .IntroductionPage {
   width: 100vw;
+  align-items: center;
+  overflow-y: scroll;
+  
+}
+.IntroductionContent {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 92vh;
   background-image: url('./images/BG.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(166,166,166,0.4);
   background-blend-mode: darken;
 }
-.IntroductionContent {
+
+.IntroductionSaying {
+  width: 100%;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
+  background-image: url('./images/saying-1.png');
+  background-size: cover;
+  background-color: rgb(166,166,166,0.4);
+  background-blend-mode: darken;
+  background-position: 50% 0%;
 }
-
+.IntroductionSayingContent {
+  align-content: center;
+  text-align: center;
+  height: 400px;
+  width: 70%;  
+  padding: 0px 10px;
+  background-color: rgb(255,255,255,0.4);
+  color: #4F4F4F;
+}
+.ch-saying {
+  font-size: 25px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.kr-saying {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Gamja Flower', sans-serif;
+}
 
 .Avatar {
   width: 400px;

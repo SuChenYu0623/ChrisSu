@@ -52,6 +52,7 @@ export default function MainPage () {
           {routers.map((router, index) => (
             <Route key={index} element={router.element} path={`${router.path}/*`} />
           ))}
+          <Route element={<IntroductionPage />} path={'/ChrisSu'} />
           <Route element={<PhotoDetail />} path={'/PhotoDetail/:name'} />
         </Routes>
       </div>

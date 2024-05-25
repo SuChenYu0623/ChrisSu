@@ -10,8 +10,6 @@ const introduction = {
   company: 'BigGo 樂方股份有限公司',
   program_lan: 'JavaScript, Python, C, solidity',
   experience: 'React, React Native, Extension, JS爬蟲, 智能合約'
-
-
 }
 
 export default function IntroductionPage() {
@@ -20,6 +18,12 @@ export default function IntroductionPage() {
       <div className='IntroductionContent'>
         <Avatar />
         <Introduction introduction={introduction} />
+      </div>
+      <div className='IntroductionSaying'>
+        <div className='IntroductionSayingContent'>
+          <div className='ch-saying'>生而為人，能照顧愛惜自己就好了！</div>
+          <div className='kr-saying'>인간으로서 스스로를 돌볼 수 있다면 참 좋을 것 같아요</div>
+        </div>
       </div>
       
     </div>
@@ -36,15 +40,8 @@ function Avatar() {
 
 function Introduction(props) {
   const { introduction } = props
-  console.log(introduction)
   return (
     <div className='Introduction'>
-      {/* <h1>{introduction.cn_name} {introduction.en_name}</h1>
-      <h4>生日 {introduction.birthday}</h4>
-      <h4>任職於 {introduction.company}</h4>
-      <h4>畢業於 {introduction.school}</h4>
-      <h4>程式語言 {introduction.program_lan}</h4>
-      <h4>專案經歷 {introduction.experience}</h4> */}
       <div className='Introduction-title'>
         <div>Crawler Enginer & Front End</div>
       </div>
@@ -73,7 +70,7 @@ function Introduction(props) {
           </tr>
           <tr>
             <th colSpan="6">PROJECT EXPERIENCE</th>
-            <td colSpan="4">{introduction.company}</td>
+            <td colSpan="4">{introduction.experience}</td>
           </tr>
         </tbody>
       </table>
