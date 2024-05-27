@@ -11,14 +11,6 @@ import PhotoPage from '../PhotoPage'
 import PhotoDetail from '../PhotoPage/PhotoDetail'
 
 
-
-
-// const Page2 = () => {
-//   return (
-//     <div style={{textAlign: 'center'}}>開發中</div>
-//   )
-// }
-
 const routers = [
   {
     name: '個人簡介',

@@ -8,7 +8,6 @@ a {
   text-decoration: none;
   color: #A6A6A6;
 }
-
 a:hover {
   color: #D9D9D9;
 }
@@ -27,7 +26,6 @@ button:hover {
 }
 
 table {
-  /* width: 100%; */
   table-layout: fixed;
 }
 
@@ -35,12 +33,10 @@ thead > tr > th {
   padding: 5px 10px;
   text-align: left;
   font-size: 15px;
-  /* width: 12%; */
   background-color: #272727;
   color: #A6A6A6;
 }
 tbody > tr > td {
-  /* width: 12%; */
   padding: 5px 10px;
   text-align: left;
   font-size: 15px;
@@ -55,9 +51,6 @@ tbody > tr > td {
   display: flex;
   justify-content: center;
 }
-
-
-
 
 .App-header {
   min-height: 100vh;
@@ -84,7 +77,6 @@ tbody > tr > td {
 .h-large {
   height: 100%;
 }
-
 .w-small {
   width: auto;
 }
@@ -107,13 +99,11 @@ tbody > tr > td {
   width: 30%;
 }
 
-
 .NavigationBar {
   height: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-bottom: 3px solid #737373; */
   background-color: #272727;
 }
 
@@ -121,7 +111,6 @@ tbody > tr > td {
   background-color: #D9D9D9;
   color: #404040;
   width: 70%;
-  /* max-height: 100%; */
   overflow-y: scroll;
   padding: 10px 20px;
   margin: 20px 15px;
@@ -163,7 +152,6 @@ tbody > tr > td {
   justify-content: center;
   align-items: center;
   height: 92vh;
-  /* background-image: url('./images/BG.png'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(166,166,166,0.4);
@@ -287,16 +275,8 @@ a.ExperienceLink:hover {
   display: flex;
   justify-content: flex-start;
   width: 100vw;
-  /* padding: 0px 30px; */
 }
 
-/* .Note {
-  background-color: #D0D0D0;
-  color: black;
-  width: 60%;
-  padding: 10px 15px;
-  margin: 20px 15px;
-} */
 .Note pre {
   border-radius: 5px;
   padding: 5px 10px;
@@ -354,8 +334,6 @@ a.ExperienceLink:hover {
 .TextArea {
   height: 100%;
   background-color: #272727;
-  /* margin-bottom: 90px; */
-  /* margin-right: 30px; */
 }
 
 .TextArea .Option {
