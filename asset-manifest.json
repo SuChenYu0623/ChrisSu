@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ChrisSu/static/css/main.96fae815.css",
-    "main.js": "/ChrisSu/static/js/main.ec33224f.js",
+    "main.css": "/ChrisSu/static/css/main.4c5b4fa0.css",
+    "main.js": "/ChrisSu/static/js/main.94e9cf02.js",
     "static/js/869.851550fe.chunk.js": "/ChrisSu/static/js/869.851550fe.chunk.js",
     "static/js/550.24df8ea5.chunk.js": "/ChrisSu/static/js/550.24df8ea5.chunk.js",
     "static/js/271.13e50709.chunk.js": "/ChrisSu/static/js/271.13e50709.chunk.js",
@@ -10,9 +10,11 @@
     "static/js/142.8f555d78.chunk.js": "/ChrisSu/static/js/142.8f555d78.chunk.js",
     "static/js/787.d4aba7ab.chunk.js": "/ChrisSu/static/js/787.d4aba7ab.chunk.js",
     "static/media/BG.png": "/ChrisSu/static/media/BG.7ad52f0bd79ffc367323.png",
-    "static/media/BG-code1.jpg": "/ChrisSu/static/media/BG-code1.93bac680b073a24be3a6.jpg",
+    "static/media/BG-code2.jpg": "/ChrisSu/static/media/BG-code2.7aaa09d0bc68bfea2ef6.jpg",
+    "static/media/BG-code1.jpg": "/ChrisSu/static/media/BG-code1.c9cc78e7306a3e691ef2.jpg",
     "static/media/saying-1.png": "/ChrisSu/static/media/saying-1.c8ba73cdfe5030e6fe63.png",
     "static/media/react.png": "/ChrisSu/static/media/react.35639ed930462bfcd544.png",
+    "static/media/web-crawler.png": "/ChrisSu/static/media/web-crawler.90d1055315ef2cff5fff.png",
     "static/media/heartNotClick.png": "/ChrisSu/static/media/heartNotClick.c4af761e50a566fae265.png",
     "static/media/github.png": "/ChrisSu/static/media/github.e92d1a0d0edb1ae95812.png",
     "static/media/heartClick.png": "/ChrisSu/static/media/heartClick.a13e3857c7c7f11756ac.png",
@@ -24,12 +26,12 @@
     "static/media/Pandas & Numpy.md": "/ChrisSu/static/media/Pandas & Numpy.31d6cfe0d16ae931b73c.md",
     "static/media/React HOOK.md": "/ChrisSu/static/media/React HOOK.31d6cfe0d16ae931b73c.md",
     "static/media/React.md": "/ChrisSu/static/media/React.31d6cfe0d16ae931b73c.md",
-    "main.96fae815.css.map": "/ChrisSu/static/css/main.96fae815.css.map",
-    "main.ec33224f.js.map": "/ChrisSu/static/js/main.ec33224f.js.map",
+    "main.4c5b4fa0.css.map": "/ChrisSu/static/css/main.4c5b4fa0.css.map",
+    "main.94e9cf02.js.map": "/ChrisSu/static/js/main.94e9cf02.js.map",
     "787.d4aba7ab.chunk.js.map": "/ChrisSu/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.96fae815.css",
-    "static/js/main.ec33224f.js"
+    "static/css/main.4c5b4fa0.css",
+    "static/js/main.94e9cf02.js"
   ]
 }
