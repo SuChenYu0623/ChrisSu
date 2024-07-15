@@ -218,13 +218,12 @@ tbody > tr > td {
 }
 .Introduction td {
   background-color: transparent;
-  /* padding: 0px 10px; */
 }
 
 .ExperienceProject {
-  /* padding: 5px 10px; */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-end;
 }
 
 .ExperienceLink {

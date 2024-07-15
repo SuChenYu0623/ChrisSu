@@ -2,12 +2,14 @@ import React from 'react';
 import '.././App.css'
 import BG_IMG from '../images/BG.png';
 import BG_CODE1 from '../images/BG-code1.jpg'
+import BG_CODE2 from '../images/BG-code2.jpg'
 // const BG_CODE1 = 'https://png.pngtree.com/thumb_back/fw800/background/20240125/pngtree-an-orange-cat-asleep-image_2499590.png'
 
 // Avatar
 import reactImg from '../images/react.png'
 import githubImg from '../images/github.png';
 import linkImg from '../images/link.png';
+import crawlerImg from '../images/web-crawler.png'
 
 const introduction = {
   cn_name: '蘇禎佑',
@@ -31,6 +33,10 @@ export default function IntroductionPage() {
         <Avatar image={reactImg} width={'200px'} />
         <ExperienceReact />
       </div>
+      <div id="JS爬蟲" className='IntroductionContent' style={{backgroundImage: `url(${BG_CODE2})`}}>
+        <Avatar image={crawlerImg} width={'200px'} />
+        <ExperienceCrawler />
+      </div>
       <div className='IntroductionSaying'>
         <div className='IntroductionSayingContent'>
           <div className='ch-saying'>生而為人，能照顧愛惜自己就好了！</div>
@@ -47,7 +53,6 @@ function Avatar(props) {
   const _padding = width
     ? (400 - +width?.match(/([0-9]+)/)?.[1])/2
     : 0
-  console.log('w', width)
   const style = width 
     ? { width: width, height: width, padding: `${_padding}px`}
     : {}
@@ -156,6 +161,33 @@ function ExperienceReact() {
             <th colSpan="6">PROJECT NAME</th>
             <td colSpan="4">
               <ExperienceProject title={"ReactNative_game_app"} githubLink={"https://github.com/SuChenYu0623/ReactNative_game_app"} />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function ExperienceCrawler() {
+  return (
+    <div className='Introduction Experience'>
+      <div className='Introduction-title'>
+        <div>JS 爬蟲</div>
+      </div>
+      <br/>
+      <div className='Introduction-subtitle'>
+        <div>GITHUB</div>
+      </div>
+      <table style={{borderTop: '1px black solid'}}>
+        <tbody>
+          <tr>
+            <th colSpan="6">PROJECT NAME</th>
+            <td colSpan="4">
+              <ExperienceProject 
+                title={"CrawlerData"} 
+                githubLink={"https://github.com/SuChenYu0623/CrawlerData"}
+                linkLink={""} />
             </td>
           </tr>
         </tbody>
