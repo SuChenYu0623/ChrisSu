@@ -176,7 +176,11 @@ tbody > tr > td {
   height: 400px;
   width: 70%;  
   padding: 0px 10px;
-  color: #4F4F4F;
+  /* color: #4F4F4F; */
+  color: rgba(0, 0, 0, 0);;
+}
+.IntroductionSayingContent:hover {
+  color: #AFAFAF;
 }
 .ch-saying {
   font-size: 25px;
