@@ -11,7 +11,9 @@
 - 結構：`pages/` 放頁面、`components/` 放共用元件、`data/` 集中硬編碼內容、`hooks/` 放共用 hook、`types/` 放共用型別
 - CI：GitHub Actions 跑 `lint + typecheck + build`，主分支 push 自動部署到 `gh-pages`
 
-**Tech Stack:** Vite 5、React 18、TypeScript 5、react-router-dom 6（HashRouter）、react-markdown 9、ESLint 8 + `@typescript-eslint`、Prettier、`peaceiris/actions-gh-pages`
+**Tech Stack:** Vite 8、React 19、TypeScript 6、react-router-dom 6（HashRouter）、react-markdown 9、ESLint 9 (flat config) + `@typescript-eslint` 8、Prettier 3、`peaceiris/actions-gh-pages`
+
+> **Note (2026-06-08 update):** Task 1.1 安裝後實際生態為 Vite 8 / React 19 / TS 6 / ESLint 9。Plan 中所有「Vite 5 / React 18 / ESLint 8 / `.eslintrc.cjs`」描述以實際安裝版本為準。ESLint 9 預設使用 flat config（`eslint.config.js`），Task 4.2 已調整為 flat config 格式。
 
 **Reference spec:** `/Users/admin/.claude/plans/claude-md-shimmying-cascade.md`
 
@@ -284,6 +286,7 @@ mkdir -p /Users/admin/Desktop/myProject/ChrisSu/my-app/src/styles
 **Files:**
 - Modify: `my-app/src/App.js`（先保留 JS、等 Phase 2 改 TSX）
 - Modify: `my-app/src/MainPage/index.js`（暫保留 BrowserRouter）
+- Rename: 所有含 JSX 的 `.js` → `.jsx`（見 Step 3）
 
 - [ ] **Step 1: 移除舊 `App.css` 在 `MainPage/index.js` 的依賴路徑問題**
 
@@ -292,6 +295,27 @@ mkdir -p /Users/admin/Desktop/myProject/ChrisSu/my-app/src/styles
 - [ ] **Step 2: 把 `MainPage/NavigationBar.js` 同樣修正 import**
 
 把 `import { React } from 'react'` 改成 `import React from 'react'`、`import '.././App.css'` 改成 `import '../App.css'`。
+
+- [ ] **Step 3: 把含 JSX 的 `.js` 全部改名為 `.jsx`**
+
+> **為什麼**：Vite 8 用 rolldown，預設只把 JSX 認在 `.jsx/.tsx`；對 `.js` 內的 JSX 會直接 build fail（即使在 `vite.config.ts` 內加 `react({ include: /\.js$/ })` 也無效）。
+
+```bash
+cd /Users/admin/Desktop/myProject/ChrisSu/my-app/src
+git mv App.js App.jsx
+git mv MainPage/index.js MainPage/index.jsx
+git mv MainPage/NavigationBar.js MainPage/NavigationBar.jsx
+git mv IntroductionPage/index.js IntroductionPage/index.jsx
+git mv NotesPage/index.js NotesPage/index.jsx
+git mv NotesPage/Note.js NotesPage/Note.jsx
+git mv ToolsPage/index.js ToolsPage/index.jsx
+git mv ToolsPage/CheckCookieDiff.js ToolsPage/CheckCookieDiff.jsx
+git mv ToolsPage/CheckDumplicationItems.js ToolsPage/CheckDumplicationItems.jsx
+git mv PhotoPage/index.js PhotoPage/index.jsx
+git mv PhotoPage/PhotoDetail.js PhotoPage/PhotoDetail.jsx
+```
+
+> Import 多半是目錄形式（如 `from '../PhotoPage'`），無副檔名 — Vite 自動解析、不必逐一改 import 字串。
 
 ### Task 1.6: 跑 Vite dev server，確認四個頁面可訪
 
@@ -1901,31 +1925,47 @@ npm run dev
 ### Task 4.2: ESLint + Prettier 規則收斂
 
 **Files:**
-- Create: `my-app/.eslintrc.cjs`
+- Create: `my-app/eslint.config.js`（flat config，ESLint 9）
 - Create: `my-app/.prettierrc`
 - Delete: `my-app/.eslintrc.js`（舊版）
 
-- [ ] **Step 1: 建 `.eslintrc.cjs`**
+- [ ] **Step 1: 建 `eslint.config.js`（flat config）**
 
 ```js
-module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  plugins: ['react-refresh', '@typescript-eslint'],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules'],
-  rules: {
-    'react-refresh/only-export-components': 'warn',
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+import js from '@eslint/js';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsparser from '@typescript-eslint/parser';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
+
+export default [
+  { ignores: ['dist', 'node_modules', 'eslint.config.js'] },
+  js.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsparser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: { ...globals.browser },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': 'warn',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    },
   },
-};
+];
 ```
+
+> 註：`globals` 套件需要安裝：`npm install --save-dev globals`
 
 - [ ] **Step 2: 建 `.prettierrc`**
 
