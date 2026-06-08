@@ -1,5 +1,5 @@
 import type { Profile, ExperienceSectionData } from '../types';
-import BG_IMG from '../images/BG.png';
+import BG_IMG from '../images/BG.jpg';
 import BG_CODE1 from '../images/BG-code1.jpg';
 import BG_CODE2 from '../images/BG-code2.jpg';
 import reactImg from '../images/react.png';
