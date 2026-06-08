@@ -10,7 +10,6 @@ export function Note() {
   useEffect(() => {
     let cancelled = false;
     if (!category || !slug) {
-      setText('');
       return;
     }
     import(`./notes/${category}/${slug}.md?raw`)

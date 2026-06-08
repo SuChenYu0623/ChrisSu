@@ -7,7 +7,11 @@ type Props = { data: ExperienceSectionData };
 
 export function ExperienceSection({ data }: Props) {
   return (
-    <div id={data.id} className={styles.section} style={{ backgroundImage: `url(${data.bgImage})` }}>
+    <div
+      id={data.id}
+      className={styles.section}
+      style={{ backgroundImage: `url(${data.bgImage})` }}
+    >
       <Avatar image={data.avatarImage} width="200px" alt={`${data.title} icon`} />
       <div className={styles.introduction}>
         <div className={styles.title}>{data.title}</div>
