@@ -2,17 +2,20 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: var(--color-fg);
 }
 .option {
+  min-height: 31px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-2);
-  background-color: var(--color-fg);
   color: var(--color-fg-muted);
 }
 .title {
   font-weight: bold;
+  text-align: left;
+  padding: 5px;
 }
 .copyBtn {
   display: flex;
@@ -20,16 +23,26 @@
   gap: var(--space-1);
   background: transparent;
   color: inherit;
-  border: none;
+  border: 0;
   cursor: pointer;
+  font-size: 15px;
+  padding: 5px;
 }
 .copyBtn img {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
 }
 .input {
   flex: 1;
   width: 100%;
+  background-color: #9d9d9d;
+  padding: 10px;
+  font-size: 15px;
+  border-width: 0;
   resize: none;
-  padding: var(--space-2);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.input:focus {
+  outline: none;
 }
