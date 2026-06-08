@@ -1,0 +1,23 @@
+.landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+  font-family: var(--notes-font-sans);
+  color: var(--notes-fg);
+}
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 var(--space-2);
+}
+.meta {
+  color: var(--notes-fg-muted);
+  margin-bottom: var(--space-5);
+  font-size: 14px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  gap: var(--space-4);
+}
