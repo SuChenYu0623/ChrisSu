@@ -1,13 +1,94 @@
-/* src/styles/globals.css — token definitions arrive in Phase 3 */
 :root {
   --color-fg: #272727;
-  --color-fg-soft: #4F4F4F;
-  --color-fg-muted: #A6A6A6;
-  --color-border: #D9D9D9;
-  --color-accent: #5B4B00;
+  --color-fg-soft: #4f4f4f;
+  --color-fg-muted: #a6a6a6;
+  --color-border: #d9d9d9;
+  --color-accent: #5b4b00;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
   --space-4: 24px;
   --space-5: 32px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-fg-soft);
+  color: var(--color-fg-muted);
+  font-family: 'Gamja Flower', Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-fg-muted);
+}
+a:hover {
+  color: var(--color-border);
+}
+
+button {
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: var(--color-fg-muted);
+  background-color: var(--color-fg);
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-border);
+  color: var(--color-fg);
+}
+
+table {
+  table-layout: fixed;
+}
+
+thead > tr > th {
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 15px;
+  background-color: var(--color-fg);
+  color: var(--color-fg-muted);
+}
+
+tbody > tr > td {
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 15px;
+  background-color: var(--color-fg-muted);
+  color: var(--color-fg);
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+textarea {
+  width: 100%;
+  background-color: #9d9d9d;
+  padding: 10px;
+  font-size: 15px;
+  border-width: 0;
+  resize: none;
+  overflow-y: auto;
+}
+textarea:focus {
+  outline: none;
+}
+
+.App-content {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
 }
