@@ -5,7 +5,6 @@ import IntroductionPage from './pages/IntroductionPage';
 import NotesPage from './pages/NotesPage';
 import ToolsPage from './pages/ToolsPage';
 import PhotoPage from './pages/PhotoPage';
-import { PhotoDetail } from './pages/PhotoPage/PhotoDetail';
 
 export default function App() {
   return (
@@ -17,8 +16,7 @@ export default function App() {
           <Route path="/introduction" element={<IntroductionPage />} />
           <Route path="/notes/*" element={<NotesPage />} />
           <Route path="/tools/*" element={<ToolsPage />} />
-          <Route path="/photos" element={<PhotoPage />} />
-          <Route path="/photos/:albumId" element={<PhotoDetail />} />
+          <Route path="/photos/*" element={<PhotoPage />} />
           <Route path="*" element={<Navigate to="/introduction" replace />} />
         </Routes>
       </div>
