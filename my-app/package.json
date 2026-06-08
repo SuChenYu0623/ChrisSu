@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://suchenyu0623.github.io/ChrisSu",
   "dependencies": {
     "gh-pages": "^6.1.1",
     "react": "^19.2.7",

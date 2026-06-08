@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# ChrisSu 個人網站
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+蘇禎佑（Chris Su）的個人作品集，部署於 [https://suchenyu0623.github.io/ChrisSu](https://suchenyu0623.github.io/ChrisSu)。
 
-## Available Scripts
+## 技術棧
 
-In the project directory, you can run:
+- Vite 8 + React 19 + TypeScript 6（strict）
+- CSS Modules + CSS variables（design tokens）
+- React Router 6（HashRouter — 規避 GitHub Pages SPA 重整 404）
+- ESLint 9（flat config）+ Prettier 3
+- GitHub Actions：CI（lint + typecheck + build）+ 自動部署到 `gh-pages` 分支
 
-### `npm start`
+## 開發
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+cd my-app
+npm install
+npm run dev
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+開啟 `http://localhost:3000/ChrisSu/`。
 
-### `npm test`
+## 常用指令
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| 指令 | 用途 |
+|---|---|
+| `npm run dev` | 本機開發 |
+| `npm run build` | Production build（`tsc -b && vite build`，產出在 `dist/`） |
+| `npm run preview` | 本機跑 production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript 編譯檢查 |
+| `npm run format` | Prettier 格式化 |
+| `npm run deploy` | 手動部署到 gh-pages（CI 已自動處理） |
 
-### `npm run build`
+## 專案結構
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+  main.tsx                 # Vite 入口
+  App.tsx                  # HashRouter + routes
+  vite-env.d.ts
+  components/              # 跨頁面共用（NavigationBar / TextArea / DefaultImage）
+  data/                    # 集中所有硬編碼資料（profile / notes / tools / photos / nav）
+  hooks/                   # 共用 hook（useCopyToClipboard）
+  types/                   # 共用型別
+  styles/globals.css       # CSS variables + reset + 全域樣式
+  pages/
+    IntroductionPage/      # 拆 5 個子元件
+    NotesPage/             # Sidebar + Note（用 useParams + Vite ?raw markdown import）
+    ToolsPage/             # cookie-diff / duplication-check 兩個工具
+    PhotoPage/             # PhotoAlbum / PhotoDetail / PhotoActionBar
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 內容更新
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 個資與經歷：`src/data/profile.ts`
+- 筆記分類與檔案：`src/data/notes.ts` + `src/pages/NotesPage/notes/`
+- 工具清單：`src/data/tools.ts`
+- 相簿：`src/data/photos.ts`
+- 導覽列：`src/data/nav.ts`
 
-### `npm run eject`
+## 部署
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+直接 push 到 `master` 即會由 `.github/workflows/deploy.yml` 自動部署。如需手動部署：
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+npm run deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> 需先確認 GitHub repo Settings → Pages 的 Source 為 `gh-pages` 分支、Actions → General → Workflow permissions 為 `Read and write`。
