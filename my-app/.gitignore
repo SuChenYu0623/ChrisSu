@@ -8,8 +8,12 @@
 # testing
 /coverage
 
-# production
+# build (CRA legacy)
 /build
+# Vite
+/dist
+# TypeScript incremental build info
+*.tsbuildinfo
 
 # misc
 .DS_Store

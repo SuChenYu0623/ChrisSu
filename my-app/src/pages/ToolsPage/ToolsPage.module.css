@@ -1,0 +1,66 @@
+.page {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100%;
+  margin-right: 30px;
+  padding: var(--space-3);
+  overflow-y: scroll;
+  background: var(--color-fg);
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.list li {
+  padding: var(--space-2) 0;
+  font-size: 18px;
+}
+
+.content {
+  width: calc(100% - 30px);
+  height: calc(100% - 20px);
+  padding: 10px 15px;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.row {
+  display: flex;
+  padding: var(--space-3);
+  height: 50%;
+}
+.cell {
+  margin: var(--space-2);
+  flex: 1;
+  height: 100%;
+}
+
+.actions {
+  padding: var(--space-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.table {
+  width: 100%;
+}
+.col2 {
+  width: 10%;
+}
+.col6 {
+  width: 30%;
+}
+.col4 {
+  width: 20%;
+}

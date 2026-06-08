@@ -1,0 +1,24 @@
+.bar {
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-fg);
+  width: 100%;
+}
+.item {
+  padding: var(--space-2);
+  margin: var(--space-2);
+}
+.link {
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.item:hover,
+.link:hover {
+  color: var(--color-fg-soft);
+  background-color: var(--color-border);
+}

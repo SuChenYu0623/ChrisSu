@@ -1,0 +1,97 @@
+.page {
+  width: 50%;
+  padding: var(--space-3);
+  overflow-y: auto;
+}
+.album {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 1%;
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+}
+.albumImages {
+  display: flex;
+  gap: var(--space-1);
+}
+.albumImages img {
+  width: 33%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 70vw;
+  padding: var(--space-3);
+}
+.container {
+  background-color: var(--color-fg);
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+.header {
+  text-align: center;
+  padding: 10px 5px;
+  font-weight: bold;
+  color: var(--color-fg-muted);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.barContent {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.barContent::-webkit-scrollbar {
+  display: none;
+}
+.arrow {
+  padding: 0 var(--space-3);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-2);
+}
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+.actionButton {
+  height: 30px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.actionButton img {
+  height: 30px;
+}
