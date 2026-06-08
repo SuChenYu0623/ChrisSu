@@ -1,0 +1,26 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: var(--space-3) 0;
+  font-size: 13px;
+  color: var(--notes-fg-muted);
+  border-bottom: 1px solid var(--notes-border);
+  margin-bottom: var(--space-4);
+}
+.breadcrumb a {
+  color: var(--notes-fg-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--notes-accent);
+}
+.current {
+  color: var(--notes-fg);
+  font-weight: 500;
+}
+.separator {
+  color: var(--notes-fg-muted);
+  opacity: 0.6;
+}

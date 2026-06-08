@@ -1,85 +1,285 @@
 .page {
-  display: flex;
-  justify-content: flex-start;
-  width: 100vw;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  width: 100%;
+  height: 92vh;
+  background: var(--notes-bg);
+  color: var(--notes-fg);
+  font-family: var(--notes-font-sans);
 }
 
 .sidebar {
-  width: 20%;
-  height: 100%;
-  margin-right: 30px;
+  background: var(--notes-bg-subtle);
+  border-right: 1px solid var(--notes-border);
   padding: var(--space-3);
-  overflow-y: scroll;
-  background: var(--color-fg);
+  overflow-y: auto;
 }
 
-.parent {
+.search {
+  width: 100%;
+  padding: 8px 12px;
+  font-family: var(--notes-font-sans);
+  font-size: 14px;
+  color: var(--notes-fg);
+  background: var(--notes-bg);
+  border: 1px solid var(--notes-border);
+  border-radius: 6px;
+  margin-bottom: var(--space-3);
+  box-sizing: border-box;
+}
+.search:focus {
+  outline: none;
+  border-color: var(--notes-accent);
+  box-shadow: 0 0 0 3px var(--notes-accent-soft);
+}
+
+.emptyState {
+  padding: var(--space-3);
+  font-size: 13px;
+  color: var(--notes-fg-muted);
+  text-align: center;
+}
+
+.section {
+  margin-bottom: var(--space-3);
+}
+.sectionHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: var(--space-2);
-  background: transparent;
-  border: none;
-  color: var(--color-fg-muted);
-  cursor: pointer;
   width: 100%;
-}
-.parent:hover {
+  padding: 4px 8px;
+  font-family: var(--notes-font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--notes-fg-muted);
   background: transparent;
-  color: var(--color-border);
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sectionHeader:hover {
+  background: transparent;
+  color: var(--notes-fg);
 }
 
-.title {
-  margin-right: var(--space-2);
-  font-weight: bold;
-}
-
-.list {
+.noteList {
   list-style: none;
-  padding-left: var(--space-3);
-  margin: 0;
+  padding: 0;
+  margin: 4px 0 0;
 }
-.list li {
-  padding: var(--space-1) 0;
+.noteList li {
+  padding: 0;
+}
+.noteLink {
+  display: block;
+  padding: 6px 12px;
+  margin: 2px 0;
+  font-size: 14px;
+  color: var(--notes-fg-soft);
+  text-decoration: none;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+}
+.noteLink:hover {
+  color: var(--notes-fg);
+  background: var(--notes-bg);
+}
+.noteLinkActive {
+  color: var(--notes-accent);
+  background: var(--notes-accent-soft);
+  border-left-color: var(--notes-accent);
+  font-weight: 600;
 }
 
-.collapsed {
+.main {
+  overflow-y: auto;
+  background: var(--notes-bg);
+}
+
+.noteLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: var(--space-4);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.tocColumn {
+  /* TableOfContents 自己是 sticky */
+}
+
+.article {
+  max-width: 800px;
+  padding: var(--space-3) var(--space-3) var(--space-5);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--notes-fg);
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: var(--space-3) 0 var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--notes-border);
+}
+.h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-5) 0 var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--notes-border);
+}
+.h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.article p {
+  margin: var(--space-2) 0;
+}
+.article ul,
+.article ol {
+  padding-left: var(--space-4);
+  margin: var(--space-2) 0;
+}
+.article li {
+  margin: 4px 0;
+}
+.article blockquote {
+  margin: var(--space-3) 0;
+  padding: var(--space-2) var(--space-3);
+  border-left: 4px solid var(--notes-accent);
+  background: var(--notes-bg-subtle);
+  color: var(--notes-fg-soft);
+}
+.article a {
+  color: var(--notes-accent);
+  text-decoration: none;
+}
+.article a:hover {
+  text-decoration: underline;
+}
+.article img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+.article table {
+  border-collapse: collapse;
+  margin: var(--space-3) 0;
+}
+.article th,
+.article td {
+  padding: 8px 12px;
+  border: 1px solid var(--notes-border);
+  font-size: 14px;
+  background: transparent;
+  color: var(--notes-fg);
+  text-align: left;
+}
+.article th {
+  background: var(--notes-bg-subtle);
+  font-weight: 600;
+}
+
+.inlineCode {
+  font-family: var(--notes-font-mono);
+  font-size: 14px;
+  padding: 2px 6px;
+  background: var(--notes-bg-subtle);
+  border-radius: 4px;
+  color: var(--notes-fg);
+}
+
+.notFound {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+  font-family: var(--notes-font-sans);
+  color: var(--notes-fg-muted);
+  text-align: center;
+}
+
+/* 響應式 — < 1200px 收 TOC */
+@media (max-width: 1200px) {
+  .noteLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tocColumn {
+    display: none;
+  }
+}
+
+.sidebarWrapper {
+  display: contents;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--notes-border);
+  border-radius: 6px;
+  color: var(--notes-fg);
+  cursor: pointer;
+  margin: var(--space-3);
+}
+.menuButton:hover {
+  background: var(--notes-bg-subtle);
+}
+
+.backdrop {
   display: none;
 }
 
-.note {
-  background-color: var(--color-border);
-  color: #404040;
-  width: 70%;
-  overflow-y: scroll;
-  padding: 10px 20px;
-  margin: 20px 15px;
-  border-radius: 5px;
-}
-
-.note pre {
-  border-radius: 5px;
-  padding: 5px 10px;
-  background-color: #f7f7f7;
-  display: flex;
-  justify-content: space-between;
-}
-.note li code {
-  border-radius: 5px;
-  padding: 2.5px 5px;
-  background-color: #f7f7f7;
-}
-
-.copyBtn {
-  margin-left: var(--space-2);
-  background: #d0d0d0;
-  color: #000;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.copyBtn:hover {
-  background: #a7a7a7;
+/* 響應式 — < 900px sidebar 變漢堡 drawer */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .sidebarWrapper {
+    display: block;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    background: var(--notes-bg-subtle);
+  }
+  .page[data-drawer-open='true'] .sidebarWrapper {
+    transform: translateX(0);
+  }
+  .sidebar {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .menuButton {
+    display: inline-flex;
+  }
+  .page[data-drawer-open='true'] .backdrop {
+    display: block;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 20;
+  }
 }
