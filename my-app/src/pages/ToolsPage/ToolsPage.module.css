@@ -1,0 +1,50 @@
+.page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.sidebar {
+  width: 240px;
+  padding: var(--space-3);
+  background: var(--color-fg);
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+.list li {
+  padding: var(--space-2) 0;
+}
+.content {
+  flex: 1;
+  padding: var(--space-3);
+}
+.row {
+  display: flex;
+  padding: var(--space-3);
+  height: 50%;
+}
+.cell {
+  margin: var(--space-2);
+  flex: 1;
+  height: 100%;
+}
+.actions {
+  padding: var(--space-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-3);
+}
+.table {
+  width: 100%;
+}
+.col2 {
+  width: 10%;
+}
+.col6 {
+  width: 30%;
+}
+.col4 {
+  width: 20%;
+}

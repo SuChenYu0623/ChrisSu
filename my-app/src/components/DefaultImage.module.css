@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+}
+.img {
+  object-fit: cover;
+}
+.mask {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}

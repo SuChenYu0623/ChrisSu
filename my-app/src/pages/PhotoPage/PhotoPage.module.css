@@ -1,0 +1,79 @@
+.page {
+  width: 50%;
+  padding: var(--space-3);
+}
+.album {
+  display: block;
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+}
+.albumImages {
+  display: flex;
+  gap: var(--space-1);
+}
+.albumImages img {
+  width: 33%;
+  object-fit: cover;
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3);
+}
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+.header {
+  padding: var(--space-3);
+  font-weight: bold;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.barContent {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  flex: 1;
+}
+.arrow {
+  padding: 0 var(--space-3);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-3);
+}
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+.actionButton {
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.actionButton img {
+  height: 30px;
+}
