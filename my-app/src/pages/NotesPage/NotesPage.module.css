@@ -218,12 +218,68 @@
   }
 }
 
+.sidebarWrapper {
+  display: contents;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--notes-border);
+  border-radius: 6px;
+  color: var(--notes-fg);
+  cursor: pointer;
+  margin: var(--space-3);
+}
+.menuButton:hover {
+  background: var(--notes-bg-subtle);
+}
+
+.backdrop {
+  display: none;
+}
+
 /* 響應式 — < 900px sidebar 變漢堡 drawer */
 @media (max-width: 900px) {
   .page {
     grid-template-columns: 1fr;
   }
+  .sidebarWrapper {
+    display: block;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    background: var(--notes-bg-subtle);
+  }
+  .page[data-drawer-open='true'] .sidebarWrapper {
+    transform: translateX(0);
+  }
   .sidebar {
-    display: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .menuButton {
+    display: inline-flex;
+  }
+  .page[data-drawer-open='true'] .backdrop {
+    display: block;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 20;
   }
 }
