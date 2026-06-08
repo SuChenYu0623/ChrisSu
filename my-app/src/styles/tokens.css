@@ -27,3 +27,14 @@
   --notes-accent: #58a6ff;
   --notes-accent-soft: rgba(56, 139, 253, 0.15);
 }
+
+/* Shiki dual-theme: dark mode 覆蓋 — Shiki 用 defaultColor: 'light' 時，
+   token 預設用 --shiki-light，需要在 dark mode 切到 --shiki-dark。 */
+[data-theme='dark'] .shiki,
+[data-theme='dark'] .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
