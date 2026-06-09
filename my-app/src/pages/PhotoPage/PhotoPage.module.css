@@ -1,6 +1,6 @@
 .page {
   width: 100%;
-  min-height: 92vh;
+  min-height: calc(100vh - 64px);
   background: var(--app-bg);
   color: var(--app-fg);
   overflow-y: auto;

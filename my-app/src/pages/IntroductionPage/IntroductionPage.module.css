@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 92vh;
+  min-height: calc(100vh - 64px);
   flex-shrink: 0;
   background-size: cover;
   background-repeat: no-repeat;
