@@ -7,8 +7,8 @@
   top: 8px;
   right: 80px;
   font-size: 12px;
-  font-family: var(--notes-font-mono);
-  color: var(--notes-fg-muted);
+  font-family: var(--app-font-mono);
+  color: var(--app-fg-muted);
   text-transform: lowercase;
   z-index: 1;
 }
@@ -19,26 +19,26 @@
   z-index: 1;
 }
 .codeBlock {
-  border: 1px solid var(--notes-border);
+  border: 1px solid var(--app-border);
   border-radius: 6px;
   overflow-x: auto;
-  font-family: var(--notes-font-mono);
+  font-family: var(--app-font-mono);
   font-size: 14px;
   line-height: 1.5;
 }
 .codeBlock :global(pre.shiki) {
   margin: 0;
   padding: 16px;
-  background: var(--notes-bg-code) !important;
+  background: var(--app-bg-code) !important;
 }
 .fallback {
   margin: 0;
   padding: 16px;
-  background: var(--notes-bg-code);
-  font-family: var(--notes-font-mono);
+  background: var(--app-bg-code);
+  font-family: var(--app-font-mono);
   font-size: 14px;
   white-space: pre-wrap;
-  border: 1px solid var(--notes-border);
+  border: 1px solid var(--app-border);
   border-radius: 6px;
-  color: var(--notes-fg);
+  color: var(--app-fg);
 }

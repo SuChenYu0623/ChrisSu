@@ -2,8 +2,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: var(--space-5) var(--space-4);
-  font-family: var(--notes-font-sans);
-  color: var(--notes-fg);
+  font-family: var(--app-font-sans);
+  color: var(--app-fg);
 }
 .title {
   font-size: 32px;
@@ -12,7 +12,7 @@
   margin: 0 0 var(--space-2);
 }
 .meta {
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   margin-bottom: var(--space-5);
   font-size: 14px;
 }
@@ -25,19 +25,19 @@
   display: flex;
   flex-direction: column;
   padding: var(--space-3);
-  background: var(--notes-bg-subtle);
-  border: 1px solid var(--notes-border);
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
   border-radius: 8px;
   text-decoration: none;
-  color: var(--notes-fg);
+  color: var(--app-fg);
   transition:
     border-color 0.15s,
     transform 0.15s;
 }
 .card:hover {
-  border-color: var(--notes-accent);
+  border-color: var(--app-accent);
   transform: translateY(-2px);
-  color: var(--notes-fg);
+  color: var(--app-fg);
 }
 .cardTitle {
   font-size: 18px;
@@ -46,7 +46,7 @@
 }
 .cardCount {
   font-size: 13px;
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   margin-bottom: var(--space-2);
 }
 .cardList {
@@ -57,10 +57,10 @@
 }
 .cardList li {
   padding: 2px 0;
-  color: var(--notes-fg-soft);
+  color: var(--app-fg-soft);
 }
 .cardList li::before {
   content: '·';
   margin-right: 6px;
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
 }

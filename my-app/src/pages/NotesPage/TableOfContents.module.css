@@ -11,7 +11,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   margin-bottom: var(--space-2);
 }
 .list {
@@ -25,20 +25,20 @@
   padding-left: var(--space-2);
 }
 .item[data-active='true'] {
-  border-left-color: var(--notes-accent);
+  border-left-color: var(--app-accent);
 }
 .item[data-active='true'] a {
-  color: var(--notes-accent);
+  color: var(--app-accent);
   font-weight: 500;
 }
 .itemIndent {
   padding-left: var(--space-4);
 }
 .item a {
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   text-decoration: none;
   display: block;
 }
 .item a:hover {
-  color: var(--notes-fg);
+  color: var(--app-fg);
 }

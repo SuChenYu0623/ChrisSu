@@ -1,31 +1,70 @@
 :root {
-  --notes-bg: #ffffff;
-  --notes-bg-subtle: #f8f9fa;
-  --notes-bg-code: #f6f8fa;
-  --notes-fg: #1f2328;
-  --notes-fg-muted: #656d76;
-  --notes-fg-soft: #424a53;
-  --notes-border: #d0d7de;
-  --notes-accent: #0969da;
-  --notes-accent-soft: #ddf4ff;
+  /* 灰階 */
+  --app-bg: #fafafa;
+  --app-bg-subtle: #f5f5f5;
+  --app-bg-elevated: #ffffff;
+  --app-bg-code: #f6f8fa;
+  --app-fg: #171717;
+  --app-fg-soft: #404040;
+  --app-fg-muted: #737373;
+  --app-fg-faint: #a3a3a3;
+  --app-border: #e5e5e5;
+  --app-border-strong: #d4d4d4;
 
-  --notes-font-sans:
+  /* 橘色主色 */
+  --app-accent: #ea580c;
+  --app-accent-hover: #c2410c;
+  --app-accent-soft: #fff7ed;
+  --app-accent-fg: #ffffff;
+
+  /* 字體 */
+  --app-font-sans:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial,
     'Microsoft JhengHei', 'PingFang TC', sans-serif;
-  --notes-font-mono:
+  --app-font-mono:
     'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Monaco, monospace;
+
+  /* 間距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* 圓角 */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* 陰影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme='dark'] {
-  --notes-bg: #0d1117;
-  --notes-bg-subtle: #161b22;
-  --notes-bg-code: #161b22;
-  --notes-fg: #e6edf3;
-  --notes-fg-muted: #8b949e;
-  --notes-fg-soft: #b1bac4;
-  --notes-border: #30363d;
-  --notes-accent: #58a6ff;
-  --notes-accent-soft: rgba(56, 139, 253, 0.15);
+  --app-bg: #0a0a0a;
+  --app-bg-subtle: #171717;
+  --app-bg-elevated: #1a1a1a;
+  --app-bg-code: #1e1e1e;
+  --app-fg: #fafafa;
+  --app-fg-soft: #d4d4d4;
+  --app-fg-muted: #a3a3a3;
+  --app-fg-faint: #737373;
+  --app-border: #262626;
+  --app-border-strong: #404040;
+
+  --app-accent: #fb923c;
+  --app-accent-hover: #fdba74;
+  --app-accent-soft: rgba(251, 146, 60, 0.12);
+  --app-accent-fg: #0a0a0a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Shiki dual-theme: dark mode 覆蓋 — Shiki 用 defaultColor: 'light' 時，
