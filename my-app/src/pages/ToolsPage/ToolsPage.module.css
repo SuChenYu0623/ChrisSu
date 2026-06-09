@@ -38,19 +38,15 @@
   padding: 6px 12px;
   margin: 2px 0;
   font-size: 14px;
-  color: var(--app-fg-soft);
+  color: var(--app-fg-muted);
   text-decoration: none;
   border-radius: var(--radius-md);
-  border-left: 3px solid transparent;
 }
 .toolLink:hover {
   color: var(--app-fg);
-  background: var(--app-bg);
 }
 .toolLinkActive {
-  color: var(--app-accent);
-  background: var(--app-accent-soft);
-  border-left-color: var(--app-accent);
+  color: var(--app-fg);
   font-weight: 600;
 }
 
