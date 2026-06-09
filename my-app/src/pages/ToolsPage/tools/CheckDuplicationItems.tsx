@@ -1,5 +1,7 @@
 import { useState, type ChangeEvent } from 'react';
 import { TextArea } from '../../../components/TextArea';
+import { ToolContainer } from '../ToolContainer';
+import { tools } from '../../../data/tools';
 import styles from '../ToolsPage.module.css';
 
 type State = {
@@ -14,6 +16,8 @@ const cleanCode = (code: string): string =>
     .trim()
     .replace(/[\n]/gm, '')
     .replace(/(['"]|)([A-Za-z0-9]+)(['"]|):/gm, '"$2":');
+
+const TOOL = tools.find((t) => t.slug === 'duplication-check')!;
 
 export function CheckDuplicationItems() {
   const [state, setState] = useState<State>({
@@ -47,23 +51,34 @@ export function CheckDuplicationItems() {
   };
 
   return (
-    <div className={styles.content}>
-      <div className={styles.row}>
-        <div className={styles.cell}>
-          <TextArea name="code" value={state.code} onChange={handleChange} />
+    <ToolContainer title={TOOL.label} description={TOOL.description}>
+      <div className={styles.content}>
+        <div className={styles.row}>
+          <div className={styles.cell}>
+            <TextArea name="code" value={state.code} onChange={handleChange} />
+          </div>
+          <div className={styles.cellStack}>
+            <TextArea name="Repeat" value={state.repeatArr} disabled />
+            <TextArea name="notRepeat" value={state.notRepeatArr} disabled />
+          </div>
         </div>
-        <div className={styles.cell}>
-          <TextArea name="Repeat" value={state.repeatArr} disabled />
-          <TextArea name="notRepeat" value={state.notRepeatArr} disabled />
+        <div className={styles.actions}>
+          <span className={styles.actionsLabel}>
+            輸入需要檢查的 key 值（單純 array 則保持為空）
+          </span>
+          <input
+            className={styles.input}
+            type="text"
+            name="key"
+            value={state.key}
+            onChange={handleChange}
+            placeholder="key"
+          />
+          <button type="button" className={styles.btnPrimary} onClick={checkDuplication}>
+            Submit
+          </button>
         </div>
       </div>
-      <div className={styles.actions}>
-        <div>輸入需要檢查的 key 值（單純 array 則保持為空）</div>
-        <input type="text" name="key" value={state.key} onChange={handleChange} />
-        <button type="button" onClick={checkDuplication}>
-          submit
-        </button>
-      </div>
-    </div>
+    </ToolContainer>
   );
 }

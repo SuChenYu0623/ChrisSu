@@ -1,5 +1,7 @@
 import { useState, type ChangeEvent } from 'react';
 import { TextArea } from '../../../components/TextArea';
+import { ToolContainer } from '../ToolContainer';
+import { tools } from '../../../data/tools';
 import styles from '../ToolsPage.module.css';
 
 type Row = [
@@ -36,6 +38,8 @@ const compareTwoArray = (
   return result;
 };
 
+const TOOL = tools.find((t) => t.slug === 'cookie-diff')!;
+
 export function CheckCookieDiff() {
   const [state, setState] = useState<State>({ code1: '', code2: '', outTable: [] });
 
@@ -62,42 +66,44 @@ export function CheckCookieDiff() {
   };
 
   return (
-    <div className={styles.content}>
-      <div className={styles.row}>
-        <div className={styles.cell}>
-          <TextArea name="code1" value={state.code1} onChange={handleChange} />
+    <ToolContainer title={TOOL.label} description={TOOL.description}>
+      <div className={styles.content}>
+        <div className={styles.row}>
+          <div className={styles.cell}>
+            <TextArea name="code1" value={state.code1} onChange={handleChange} />
+          </div>
+          <div className={styles.cell}>
+            <TextArea name="code2" value={state.code2} onChange={handleChange} />
+          </div>
         </div>
-        <div className={styles.cell}>
-          <TextArea name="code2" value={state.code2} onChange={handleChange} />
+        <div className={styles.actions}>
+          <button type="button" className={styles.btnPrimary} onClick={checkCookieDiff}>
+            Parse
+          </button>
         </div>
-      </div>
-      <div className={styles.actions}>
-        <button type="button" onClick={checkCookieDiff}>
-          parse
-        </button>
-      </div>
-      <div className={styles.row}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th className={styles.col2}>cookie</th>
-              <th className={styles.col6}>before</th>
-              <th className={styles.col6}>after</th>
-              <th className={styles.col4}>message</th>
-            </tr>
-          </thead>
-          <tbody>
-            {state.outTable.map(([key, before, after, message]) => (
-              <tr key={key}>
-                <td className={styles.col2}>{key}</td>
-                <td className={styles.col6}>{before}</td>
-                <td className={styles.col6}>{after}</td>
-                <td className={styles.col4}>{message}</td>
+        {state.outTable.length > 0 && (
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th className={styles.col2}>Cookie</th>
+                <th className={styles.col6}>Before</th>
+                <th className={styles.col6}>After</th>
+                <th className={styles.col4}>Message</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {state.outTable.map(([key, before, after, message]) => (
+                <tr key={key}>
+                  <td className={styles.col2}>{key}</td>
+                  <td className={styles.col6}>{before}</td>
+                  <td className={styles.col6}>{after}</td>
+                  <td className={styles.col4}>{message}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
-    </div>
+    </ToolContainer>
   );
 }

@@ -34,6 +34,7 @@ export type NoteCategory = {
 export type ToolEntry = {
   slug: string;
   label: string;
+  description: string;
 };
 
 export type Photo = {
