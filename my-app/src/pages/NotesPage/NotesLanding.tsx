@@ -13,11 +13,7 @@ export function NotesLanding() {
       </p>
       <div className={styles.cardGrid}>
         {noteCategories.map((cat) => (
-          <Link
-            key={cat.key}
-            to={`/notes/${cat.key}/${cat.notes[0].slug}`}
-            className={styles.card}
-          >
+          <Link key={cat.key} to={`/notes/${cat.key}`} className={styles.card}>
             <div className={styles.cardTitle}>{cat.label}</div>
             <div className={styles.cardCount}>{cat.notes.length} 篇</div>
             <ul className={styles.cardList}>

@@ -5,6 +5,29 @@
   font-family: var(--app-font-sans);
   color: var(--app-fg);
 }
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--app-fg-muted);
+  margin-bottom: var(--space-3);
+}
+.breadcrumb a {
+  color: var(--app-fg-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--app-accent);
+}
+.breadcrumbCurrent {
+  color: var(--app-fg);
+  font-weight: 500;
+}
+.breadcrumbSeparator {
+  color: var(--app-fg-muted);
+  opacity: 0.6;
+}
 .title {
   font-size: 32px;
   font-weight: 700;

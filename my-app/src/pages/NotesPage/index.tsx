@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Note } from './Note';
 import { NotesLanding } from './NotesLanding';
+import { CategoryDetail } from './CategoryDetail';
 import { noteCategories } from '../../data/notes';
 import styles from './NotesPage.module.css';
 
@@ -43,6 +44,7 @@ export default function NotesPage() {
         </button>
         <Routes>
           <Route index element={<NotesLanding />} />
+          <Route path=":category" element={<CategoryDetail />} />
           <Route path=":category/:slug" element={<Note />} />
         </Routes>
       </main>
