@@ -4,14 +4,53 @@ import BG_IMG from '../images/BG.jpg';
 export const profile: Profile = {
   cnName: '蘇禎佑',
   enName: 'Chris Su',
-  tagline: 'Crawler Engineer & Front End',
+  tagline: 'Crawler Engineer & Full Stack',
   description:
-    '我寫爬蟲、做 React、玩智能合約。目前在 BigGo 樂方股份有限公司，興趣是把資料變成有用的工具。',
+    '寫爬蟲、做前端、也碰後端與 DevOps。能獨立搭建一套爬蟲系統，從排程、爬取、資料流到部署一手包辦。目前在大數據股份有限公司，最近一年逐步把工作流程轉換成用 spec 規劃 + Claude 寫程式，自己更多時間放在架構與流程優化上。',
   birthday: '1999/06/23',
   school: 'National Kaohsiung University of Science and Technology (EE)',
-  company: 'BigGo 樂方股份有限公司',
+  company: '大數據股份有限公司',
   programLanguages: ['JavaScript', 'Python', 'C', 'Solidity'],
-  skills: ['React', 'Extension', 'JS 爬蟲', '智能合約', 'AI'],
+  skillGroups: [
+    {
+      label: 'Languages',
+      items: ['Python', 'JavaScript', 'C', 'Solidity'],
+    },
+    {
+      label: 'Frontend',
+      items: ['React', 'Next.js', 'Chrome Extension'],
+    },
+    {
+      label: 'Backend',
+      items: ['FastAPI'],
+    },
+    {
+      label: 'Database',
+      items: ['MSSQL', 'PostgreSQL', 'Elasticsearch'],
+    },
+    {
+      label: 'Queue & Cache',
+      items: ['RabbitMQ', 'Redis'],
+    },
+    {
+      label: 'Crawling',
+      items: [
+        'JS（F12 inline）',
+        'requests / httpx / curl-cffi',
+        'Scrapy',
+        'Playwright',
+        '逆向解密',
+      ],
+    },
+    {
+      label: 'DevOps',
+      items: ['Docker', 'Docker Compose', 'GCP Cloud Run', 'GCS', 'Gemini', 'Vertex AI'],
+    },
+    {
+      label: 'Workflow',
+      items: ['Spec-driven development with Claude (superpowers)'],
+    },
+  ],
   avatarSrc: BG_IMG,
   githubUrl: 'https://github.com/SuChenYu0623',
 };

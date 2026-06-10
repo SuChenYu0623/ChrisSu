@@ -69,6 +69,8 @@
   list-style: none;
   padding: 0;
   margin: 4px 0 0;
+  border-left: 1px solid var(--app-border);
+  margin-left: 10px;
 }
 .noteList li {
   padding: 0;

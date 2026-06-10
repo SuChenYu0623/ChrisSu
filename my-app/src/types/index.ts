@@ -1,3 +1,8 @@
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
 export type Profile = {
   cnName: string;
   enName: string;
@@ -7,7 +12,7 @@ export type Profile = {
   school: string;
   company: string;
   programLanguages: string[];
-  skills: string[];
+  skillGroups: SkillGroup[];
   avatarSrc: string;
   githubUrl: string;
 };
