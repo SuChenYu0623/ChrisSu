@@ -2,16 +2,16 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: var(--notes-fg);
+  color: var(--app-fg);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   border-radius: 8px;
-  background: var(--notes-bg-subtle);
+  background: var(--app-bg-subtle);
 }
 .card:hover {
   transform: translateY(-4px);
-  color: var(--notes-fg);
+  color: var(--app-fg);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 [data-theme='dark'] .card:hover {
@@ -22,7 +22,7 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
-  background: var(--notes-bg-code);
+  background: var(--app-bg-code);
 }
 .image {
   width: 100%;
@@ -43,5 +43,5 @@
 }
 .meta {
   font-size: 13px;
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
 }

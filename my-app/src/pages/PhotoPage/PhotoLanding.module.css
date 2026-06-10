@@ -2,8 +2,8 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-5) var(--space-4);
-  font-family: var(--notes-font-sans);
-  color: var(--notes-fg);
+  font-family: var(--app-font-sans);
+  color: var(--app-fg);
 }
 .title {
   font-size: 32px;
@@ -12,7 +12,7 @@
   margin: 0 0 var(--space-2);
 }
 .meta {
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   margin-bottom: var(--space-5);
   font-size: 14px;
 }

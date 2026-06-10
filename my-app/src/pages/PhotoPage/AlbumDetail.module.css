@@ -2,8 +2,8 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-3) var(--space-5);
-  font-family: var(--notes-font-sans);
-  color: var(--notes-fg);
+  font-family: var(--app-font-sans);
+  color: var(--app-fg);
 }
 .toolbar {
   display: flex;
@@ -11,15 +11,15 @@
   justify-content: space-between;
   gap: var(--space-3);
   padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--notes-border);
+  border-bottom: 1px solid var(--app-border);
 }
 .back {
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   text-decoration: none;
   font-size: 14px;
 }
 .back:hover {
-  color: var(--notes-accent);
+  color: var(--app-accent);
 }
 .title {
   font-size: 24px;
@@ -28,6 +28,6 @@
 }
 .meta {
   font-size: 13px;
-  color: var(--notes-fg-muted);
+  color: var(--app-fg-muted);
   margin-top: 4px;
 }

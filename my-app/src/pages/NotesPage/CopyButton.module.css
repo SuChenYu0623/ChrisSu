@@ -4,10 +4,10 @@
   gap: 4px;
   padding: 4px 10px;
   font-size: 12px;
-  font-family: var(--notes-font-sans);
-  color: var(--notes-fg-muted);
-  background: var(--notes-bg-subtle);
-  border: 1px solid var(--notes-border);
+  font-family: var(--app-font-sans);
+  color: var(--app-fg-muted);
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
   border-radius: 6px;
   cursor: pointer;
   opacity: 0.4;
@@ -16,10 +16,10 @@
     color 0.15s;
 }
 .button:hover {
-  color: var(--notes-fg);
+  color: var(--app-fg);
   opacity: 1;
 }
 .copied {
-  color: var(--notes-accent);
+  color: var(--app-accent);
   opacity: 1;
 }

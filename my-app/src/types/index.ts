@@ -1,28 +1,28 @@
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
 export type Profile = {
   cnName: string;
   enName: string;
+  tagline: string;
+  description: string;
   birthday: string;
   school: string;
   company: string;
-  programLanguages: string;
-  experience: string[];
+  programLanguages: string[];
+  skillGroups: SkillGroup[];
+  avatarSrc: string;
+  githubUrl: string;
 };
 
-export type ProjectExperience = {
+export type Project = {
   title: string;
-  githubLink: string;
-  liveLink?: string;
-};
-
-export type ExperienceSectionData = {
-  id: string;
-  title: string;
-  bgImage: string;
-  avatarImage: string;
-  groups: {
-    subtitle: string;
-    projects: ProjectExperience[];
-  }[];
+  description: string;
+  tags: string[];
+  githubUrl: string;
+  liveUrl?: string;
 };
 
 export type NoteEntry = {
@@ -39,6 +39,7 @@ export type NoteCategory = {
 export type ToolEntry = {
   slug: string;
   label: string;
+  description: string;
 };
 
 export type Photo = {

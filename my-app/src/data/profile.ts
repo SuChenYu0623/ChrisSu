@@ -1,74 +1,91 @@
-import type { Profile, ExperienceSectionData } from '../types';
+import type { Profile, Project } from '../types';
 import BG_IMG from '../images/BG.jpg';
-import BG_CODE1 from '../images/BG-code1.jpg';
-import BG_CODE2 from '../images/BG-code2.jpg';
-import reactImg from '../images/react.png';
-import crawlerImg from '../images/web-crawler.png';
 
 export const profile: Profile = {
   cnName: '蘇禎佑',
-  enName: 'chris',
+  enName: 'Chris Su',
+  tagline: 'Crawler Engineer & Full Stack',
+  description:
+    '寫爬蟲、做前端、也碰後端與 DevOps。能獨立搭建一套爬蟲系統，從排程、爬取、資料流到部署一手包辦。目前在大數據股份有限公司，最近一年逐步把工作流程轉換成用 spec 規劃 + Claude 寫程式，自己更多時間放在架構與流程優化上。',
   birthday: '1999/06/23',
-  school: 'National Kaohsiung University of Science and Technology EE',
-  company: 'BigGo 樂方股份有限公司',
-  programLanguages: 'JavaScript, Python, C, solidity',
-  experience: ['React', 'Extension', 'JS爬蟲', '智能合約', 'AI'],
+  school: 'National Kaohsiung University of Science and Technology (EE)',
+  company: '大數據股份有限公司',
+  programLanguages: ['JavaScript', 'Python', 'C', 'Solidity'],
+  skillGroups: [
+    {
+      label: 'Languages',
+      items: ['Python', 'JavaScript', 'C', 'Solidity'],
+    },
+    {
+      label: 'Frontend',
+      items: ['React', 'Next.js', 'Chrome Extension'],
+    },
+    {
+      label: 'Backend',
+      items: ['FastAPI'],
+    },
+    {
+      label: 'Database',
+      items: ['MSSQL', 'PostgreSQL', 'Elasticsearch'],
+    },
+    {
+      label: 'Queue & Cache',
+      items: ['RabbitMQ', 'Redis'],
+    },
+    {
+      label: 'Crawling',
+      items: [
+        'JS（F12 inline）',
+        'requests / httpx / curl-cffi',
+        'Scrapy',
+        'Playwright',
+        '逆向解密',
+      ],
+    },
+    {
+      label: 'DevOps',
+      items: ['Docker', 'Docker Compose', 'GCP Cloud Run', 'GCS', 'Gemini', 'Vertex AI'],
+    },
+    {
+      label: 'Workflow',
+      items: ['Spec-driven development with Claude (superpowers)'],
+    },
+  ],
+  avatarSrc: BG_IMG,
+  githubUrl: 'https://github.com/SuChenYu0623',
 };
 
-export const profileBackground = BG_IMG;
-
-export const experienceSections: ExperienceSectionData[] = [
+export const projects: Project[] = [
   {
-    id: 'React',
-    title: 'React Project',
-    bgImage: BG_CODE1,
-    avatarImage: reactImg,
-    groups: [
-      {
-        subtitle: 'WEB',
-        projects: [
-          {
-            title: 'SocialMedia',
-            githubLink: 'https://github.com/SuChenYu0623/SocialMedia',
-            liveLink: 'https://suchenyu0623.github.io/SocialMedia/',
-          },
-          {
-            title: 'Game',
-            githubLink: 'https://github.com/SuChenYu0623/Game',
-            liveLink: 'https://suchenyu0623.github.io/Game/',
-          },
-        ],
-      },
-      {
-        subtitle: 'APP',
-        projects: [
-          {
-            title: 'RandomSelectMealApp',
-            githubLink: 'https://github.com/SuChenYu0623/RandomSelectMealApp',
-          },
-          {
-            title: 'ReactNative_game_app',
-            githubLink: 'https://github.com/SuChenYu0623/ReactNative_game_app',
-          },
-        ],
-      },
-    ],
+    title: 'SocialMedia',
+    description: '社群媒體前端 demo，含貼文、留言、追蹤功能。',
+    tags: ['React', 'Web'],
+    githubUrl: 'https://github.com/SuChenYu0623/SocialMedia',
+    liveUrl: 'https://suchenyu0623.github.io/SocialMedia/',
   },
   {
-    id: 'JS爬蟲',
-    title: 'JS 爬蟲',
-    bgImage: BG_CODE2,
-    avatarImage: crawlerImg,
-    groups: [
-      {
-        subtitle: 'GITHUB',
-        projects: [
-          {
-            title: 'CrawlerData',
-            githubLink: 'https://github.com/SuChenYu0623/CrawlerData',
-          },
-        ],
-      },
-    ],
+    title: 'Game',
+    description: '一個瀏覽器小遊戲。',
+    tags: ['React', 'Web'],
+    githubUrl: 'https://github.com/SuChenYu0623/Game',
+    liveUrl: 'https://suchenyu0623.github.io/Game/',
+  },
+  {
+    title: 'RandomSelectMealApp',
+    description: '隨機選擇午餐的 React Native App。',
+    tags: ['React Native', 'App'],
+    githubUrl: 'https://github.com/SuChenYu0623/RandomSelectMealApp',
+  },
+  {
+    title: 'ReactNative_game_app',
+    description: 'React Native 寫的小遊戲。',
+    tags: ['React Native', 'App'],
+    githubUrl: 'https://github.com/SuChenYu0623/ReactNative_game_app',
+  },
+  {
+    title: 'CrawlerData',
+    description: '網路爬蟲腳本集合，含多種網站的資料擷取範例。',
+    tags: ['JavaScript', 'Crawler'],
+    githubUrl: 'https://github.com/SuChenYu0623/CrawlerData',
   },
 ];

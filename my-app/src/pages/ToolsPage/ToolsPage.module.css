@@ -1,66 +1,261 @@
 .page {
-  display: flex;
-  justify-content: flex-start;
-  width: 100vw;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  background: var(--app-bg);
+  color: var(--app-fg);
+  font-family: var(--app-font-sans);
 }
 
 .sidebar {
-  width: 20%;
-  height: 100%;
-  margin-right: 30px;
+  background: var(--app-bg-subtle);
+  border-right: 1px solid var(--app-border);
   padding: var(--space-3);
-  overflow-y: scroll;
-  background: var(--color-fg);
+  overflow-y: auto;
 }
 
-.list {
+.sidebarLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--app-fg-muted);
+  padding: 4px 8px;
+  margin-bottom: var(--space-2);
+}
+
+.toolList {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
 }
-.list li {
-  padding: var(--space-2) 0;
+.toolList li {
+  padding: 0;
+}
+.toolLink {
+  display: block;
+  padding: 6px 12px;
+  margin: 2px 0;
+  font-size: 14px;
+  color: var(--app-fg-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+}
+.toolLink:hover {
+  color: var(--app-fg);
+}
+.toolLinkActive {
+  color: var(--app-fg);
+  font-weight: 600;
+}
+
+.main {
+  overflow-y: auto;
+  background: var(--app-bg);
+}
+
+/* ───── Tools landing ───── */
+.landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+.landingTitle {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 var(--space-2);
+}
+.landingMeta {
+  color: var(--app-fg-muted);
+  margin: 0 0 var(--space-5);
+  font-size: 14px;
+}
+.landingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+.landingCard {
+  display: block;
+  padding: var(--space-4);
+  background: var(--app-bg-elevated);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--app-fg);
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.landingCard:hover {
+  border-color: var(--app-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--app-fg);
+}
+.landingCardTitle {
   font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
-
-.content {
-  width: calc(100% - 30px);
-  height: calc(100% - 20px);
-  padding: 10px 15px;
+.landingCardDesc {
+  font-size: 14px;
+  color: var(--app-fg-muted);
+  line-height: 1.5;
   margin: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
-.row {
+/* ───── Tool container ───── */
+.toolContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+.breadcrumb {
   display: flex;
-  padding: var(--space-3);
-  height: 50%;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--app-fg-muted);
+  margin-bottom: var(--space-3);
+}
+.breadcrumb a {
+  color: var(--app-fg-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--app-accent);
+}
+.breadcrumbCurrent {
+  color: var(--app-fg);
+  font-weight: 500;
+}
+.toolTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.toolDesc {
+  color: var(--app-fg-muted);
+  margin: 0 0 var(--space-5);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ───── Tool body ───── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
 }
 .cell {
-  margin: var(--space-2);
-  flex: 1;
-  height: 100%;
+  height: 320px;
 }
-
-.actions {
-  padding: var(--space-3);
+.cellStack {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 320px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
+}
+.actionsLabel {
+  font-size: 14px;
+  color: var(--app-fg-soft);
+}
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--app-accent);
+  color: var(--app-accent-fg);
+  border: 1px solid var(--app-accent);
+  border-radius: var(--radius-md);
+  font-family: var(--app-font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btnPrimary:hover {
+  background: var(--app-accent-hover);
+  border-color: var(--app-accent-hover);
+  color: var(--app-accent-fg);
+}
+.input {
+  padding: 8px 12px;
+  font-family: var(--app-font-mono);
+  font-size: 14px;
+  background: var(--app-bg-subtle);
+  color: var(--app-fg);
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-md);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--app-accent);
+  box-shadow: 0 0 0 3px var(--app-accent-soft);
 }
 
 .table {
   width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid var(--app-border);
+  background: transparent;
+  color: var(--app-fg);
+}
+.table th {
+  background: var(--app-bg-subtle);
+  font-weight: 600;
+  color: var(--app-fg-muted);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
 }
 .col2 {
-  width: 10%;
+  width: 15%;
 }
 .col6 {
   width: 30%;
 }
 .col4 {
-  width: 20%;
+  width: 25%;
+}
+
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .cell,
+  .cellStack {
+    height: 240px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
 }
