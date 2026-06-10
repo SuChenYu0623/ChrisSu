@@ -28,6 +28,7 @@ export type Project = {
 export type NoteEntry = {
   slug: string;
   title: string;
+  sidebarLabel?: string;
 };
 
 export type NoteCategory = {

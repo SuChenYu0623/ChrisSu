@@ -70,8 +70,9 @@ function SidebarSection({
                 className={({ isActive }) =>
                   isActive ? `${styles.noteLink} ${styles.noteLinkActive}` : styles.noteLink
                 }
+                title={note.title}
               >
-                {note.title}
+                {note.sidebarLabel ?? note.title}
               </NavLink>
             </li>
           ))}
